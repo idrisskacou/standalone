@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../node_modules/@astrouxds/astro-web-components/dist/esm/rux-icon.entry.js"],
+  "sourcesContent": ["import { r as registerInstance, h, H as Host } from './index-416188d1.js';\nconst ruxIconCss = \":host{display:inline-flex;color:var(--color-background-interactive-default, #4dacff)}:host([hidden]){display:none}svg,svg>svg{height:100%;width:auto}.icon{display:inline-flex}\";\nconst RuxIcon = class {\n  constructor(hostRef) {\n    registerInstance(this, hostRef);\n    // eslint-disable-next-line\n    this.svg = '';\n    this.size = 'normal';\n    this.icon = undefined;\n  }\n  render() {\n    const SVG = `rux-icon-${this.icon}`;\n    return h(Host, null, h(SVG, {\n      class: \"icon\",\n      part: \"icon\",\n      size: this.size\n    }));\n  }\n};\nRuxIcon.style = ruxIconCss;\nexport { RuxIcon as rux_icon };"],
+  "mappings": ";;;;;;;;AACA,IAAM,aAAa;AACnB,IAAM,UAAU,MAAM;AAAA,EACpB,YAAY,SAAS;AACnB,qBAAiB,MAAM,OAAO;AAE9B,SAAK,MAAM;AACX,SAAK,OAAO;AACZ,SAAK,OAAO;AAAA,EACd;AAAA,EACA,SAAS;AACP,UAAM,MAAM,YAAY,KAAK,IAAI;AACjC,WAAO,EAAE,MAAM,MAAM,EAAE,KAAK;AAAA,MAC1B,OAAO;AAAA,MACP,MAAM;AAAA,MACN,MAAM,KAAK;AAAA,IACb,CAAC,CAAC;AAAA,EACJ;AACF;AACA,QAAQ,QAAQ;",
+  "names": []
+}

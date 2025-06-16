@@ -1,0 +1,61 @@
+.command-center {
+  background: linear-gradient(to bottom right, #0a0f1a, #000010);
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: #e0faff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.mission-banner {
+  background: rgba(20, 30, 50, 0.6);
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.05);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.metrics-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem;
+  background: rgba(15, 20, 30, 0.3);
+  border: 1px solid rgba(100, 255, 255, 0.1);
+  border-radius: 0.75rem;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.module-card {
+  background: rgba(25, 35, 50, 0.5);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  }
+
+  h3 {
+    color: #a6f3ff;
+  }
+
+  p {
+    color: #b6d7f2;
+  }
+
+  rux-button {
+    background: rgba(0, 255, 255, 0.1);
+    color: #00f0ff;
+  }
+}

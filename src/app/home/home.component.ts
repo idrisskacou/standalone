@@ -1,0 +1,17 @@
+import { CommonModule } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AstroComponentsModule } from '@astrouxds/angular';
+import { AgGridModule } from 'ag-grid-angular';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  providers: [AgGridModule, AstroComponentsModule, CommonModule],
+  imports: [AstroComponentsModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
+})
+export class HomeComponent {
+
+}

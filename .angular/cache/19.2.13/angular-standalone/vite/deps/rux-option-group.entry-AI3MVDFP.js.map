@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../node_modules/@astrouxds/astro-web-components/dist/esm/rux-option-group.entry.js"],
+  "sourcesContent": ["import { r as registerInstance, c as createEvent, h, H as Host, g as getElement } from './index-416188d1.js';\nconst ruxOptionGroupCss = \":host{display:block;background:var(--color-background-base-default, #101923)}\";\nconst RuxOptionGroup = class {\n  constructor(hostRef) {\n    registerInstance(this, hostRef);\n    this.groupChanged = createEvent(this, \"rux-option-group-changed\", 7);\n    this.label = undefined;\n  }\n  connectedCallback() {\n    this._handleSlotChange = this._handleSlotChange.bind(this);\n  }\n  _handleSlotChange() {\n    this.groupChanged.emit();\n  }\n  render() {\n    return h(Host, null, h(\"slot\", {\n      onSlotchange: this._handleSlotChange\n    }));\n  }\n  get el() {\n    return getElement(this);\n  }\n};\nRuxOptionGroup.style = ruxOptionGroupCss;\nexport { RuxOptionGroup as rux_option_group };"],
+  "mappings": ";;;;;;;;;;AACA,IAAM,oBAAoB;AAC1B,IAAM,iBAAiB,MAAM;AAAA,EAC3B,YAAY,SAAS;AACnB,qBAAiB,MAAM,OAAO;AAC9B,SAAK,eAAe,YAAY,MAAM,4BAA4B,CAAC;AACnE,SAAK,QAAQ;AAAA,EACf;AAAA,EACA,oBAAoB;AAClB,SAAK,oBAAoB,KAAK,kBAAkB,KAAK,IAAI;AAAA,EAC3D;AAAA,EACA,oBAAoB;AAClB,SAAK,aAAa,KAAK;AAAA,EACzB;AAAA,EACA,SAAS;AACP,WAAO,EAAE,MAAM,MAAM,EAAE,QAAQ;AAAA,MAC7B,cAAc,KAAK;AAAA,IACrB,CAAC,CAAC;AAAA,EACJ;AAAA,EACA,IAAI,KAAK;AACP,WAAO,WAAW,IAAI;AAAA,EACxB;AACF;AACA,eAAe,QAAQ;",
+  "names": []
+}

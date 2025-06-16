@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../node_modules/@astrouxds/astro-web-components/dist/esm/rux-tab-panel.entry.js"],
+  "sourcesContent": ["import { r as registerInstance, h, H as Host, g as getElement } from './index-416188d1.js';\nconst ruxTabPanelCss = \":host{display:block;position:relative;visibility:visible;z-index:1;font-family:var(--font-body-1-font-family, 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif);font-size:var(--font-body-1-font-size, 1rem);font-weight:var(--font-body-1-font-weight, 400);letter-spacing:var(--font-body-1-letter-spacing, 0.005em);line-height:var(--line-height-base, 1.5rem);text-align:left}:host([hidden]){display:none}:host(.hidden){display:none;position:absolute;visibility:hidden;z-index:-1}\";\nconst RuxTabPanel = class {\n  constructor(hostRef) {\n    registerInstance(this, hostRef);\n  }\n  connectedCallback() {\n    this.el.setAttribute('role', 'tabpanel');\n  }\n  render() {\n    return h(Host, null, h(\"slot\", null));\n  }\n  get el() {\n    return getElement(this);\n  }\n};\nRuxTabPanel.style = ruxTabPanelCss;\nexport { RuxTabPanel as rux_tab_panel };"],
+  "mappings": ";;;;;;;;;AACA,IAAM,iBAAiB;AACvB,IAAM,cAAc,MAAM;AAAA,EACxB,YAAY,SAAS;AACnB,qBAAiB,MAAM,OAAO;AAAA,EAChC;AAAA,EACA,oBAAoB;AAClB,SAAK,GAAG,aAAa,QAAQ,UAAU;AAAA,EACzC;AAAA,EACA,SAAS;AACP,WAAO,EAAE,MAAM,MAAM,EAAE,QAAQ,IAAI,CAAC;AAAA,EACtC;AAAA,EACA,IAAI,KAAK;AACP,WAAO,WAAW,IAAI;AAAA,EACxB;AACF;AACA,YAAY,QAAQ;",
+  "names": []
+}

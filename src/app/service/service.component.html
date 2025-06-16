@@ -1,0 +1,43 @@
+<div class="command-center">
+
+  <!-- Mission Header -->
+  <rux-container class="mission-banner">
+    <h2 slot="header">🎖 Welcome, Sgt. Nova Vega</h2>
+    <p slot="body">Systems online. All modules synchronized. Proceed with operation commands.</p>
+  </rux-container>
+
+  <!-- Mission Metrics -->
+  <div class="metrics-bar">
+    <rux-indicator status="normal" label="Mission Code: ORB-9X" />
+    <rux-indicator status="standby" label="Power Grid: 92%" />
+    <rux-indicator status="off" label="Comm Uplink: Disconnected" />
+    <rux-indicator status="caution" label="AI Sync: Delayed" />
+  </div>
+
+  <!-- Tactical Modules -->
+  <div class="modules-grid">
+    <rux-card class="module-card">
+      <h3 slot="header">🚀 Launch Systems</h3>
+      <p slot="body">Review vector alignments and ignition protocols.</p>
+      <rux-button slot="footer" icon="launch">Initiate</rux-button>
+    </rux-card>
+
+    <rux-card class="module-card">
+      <h3 slot="header">📡 Comms Array</h3>
+      <p slot="body">Engage encrypted channels and relay commands.</p>
+      <rux-button slot="footer" icon="antenna">Activate</rux-button>
+    </rux-card>
+
+    <rux-card class="module-card">
+      <h3 slot="header">🧠 AI Tactical Core</h3>
+      <p slot="body">Predictive mission planning and threat modeling.</p>
+      <rux-button slot="footer" icon="brain-circuit">Access</rux-button>
+    </rux-card>
+
+    <rux-card class="module-card">
+      <h3 slot="header">🛰 Satellite Feed</h3>
+      <p slot="body">Monitor satellite telemetry and surface data.</p>
+      <rux-button slot="footer" icon="satellite">Visualize</rux-button>
+    </rux-card>
+  </div>
+</div>
