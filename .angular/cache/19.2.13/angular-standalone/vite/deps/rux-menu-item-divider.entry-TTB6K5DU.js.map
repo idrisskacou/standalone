@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../../../../node_modules/@astrouxds/astro-web-components/dist/esm/rux-menu-item-divider.entry.js"],
-  "sourcesContent": ["import { r as registerInstance, h } from './index-416188d1.js';\nconst ruxMenuItemDividerCss = \":host{display:block}:host([hidden]){display:none}li{list-style:none;pointer-events:none;border-top:1px solid var(--menu-divider-color-fill, #51555b)}.wrapper{padding:var(--spacing-1, 0.25rem) var(--spacing-2, 0.5rem)}\";\nconst RuxMenuItemDivider = class {\n  constructor(hostRef) {\n    registerInstance(this, hostRef);\n  }\n  render() {\n    return h(\"div\", {\n      class: \"wrapper\"\n    }, h(\"li\", {\n      role: \"separator\",\n      part: \"container\"\n    }));\n  }\n};\nRuxMenuItemDivider.style = ruxMenuItemDividerCss;\nexport { RuxMenuItemDivider as rux_menu_item_divider };"],
-  "mappings": ";;;;;;;AACA,IAAM,wBAAwB;AAC9B,IAAM,qBAAqB,MAAM;AAAA,EAC/B,YAAY,SAAS;AACnB,qBAAiB,MAAM,OAAO;AAAA,EAChC;AAAA,EACA,SAAS;AACP,WAAO,EAAE,OAAO;AAAA,MACd,OAAO;AAAA,IACT,GAAG,EAAE,MAAM;AAAA,MACT,MAAM;AAAA,MACN,MAAM;AAAA,IACR,CAAC,CAAC;AAAA,EACJ;AACF;AACA,mBAAmB,QAAQ;",
-  "names": []
-}

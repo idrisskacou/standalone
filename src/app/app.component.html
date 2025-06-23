@@ -14,8 +14,7 @@
 
   
   <!-- Navigation Menu -->
-    <div class="menu-inline" slot="right-side">
-      <!-- Home Button -->
+    <!-- <div class="menu-inline" slot="right-side">
       <rux-button size="small" (click)="navigateTo('')" style="margin-right: 0.5rem;">
         Home
       </rux-button>
@@ -23,25 +22,55 @@
       <rux-pop-up open="true" placement="bottom" disable-auto-update="">
         <rux-button slot="trigger" size="small" (click)="navigateTo('/service/')">Service</rux-button>
         <rux-menu>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
             <rux-menu-item (click)="navigateTo('/monitor')">Monitor</rux-menu-item>
             <rux-menu-item (click)="navigateTo('/status')">Status</rux-menu-item>
         </rux-menu>
-    </rux-pop-up>
-    </div>
-    <div class="vl" slot="right-side"></div>
+      </rux-pop-up>
 
-    <rux-monitoring-progress-icon slot="right-side" label="Process" [progress]="status" status="off">
+      <rux-tabs id="tab-set-id-1">
+        <rux-tab id="tab-id-1" (click)="navigateTo('/monitor')">Home</rux-tab>
+        <rux-tab id="tab-id-2" (click)="navigateTo('/status')">Status</rux-tab>
+        <rux-tab id="tab-id-3" (click)="navigateTo('')" >Tab 3</rux-tab>
+      </rux-tabs>
+      <div class="dropdown">
+        <rux-menu-item class="dropbtn" (click)="navigateTo('')" >Dropdown</rux-menu-item>
+        <div class="dropdown-content">
+          <a (click)="navigateTo('/monitor')">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="vl" slot="right-side"></div> -->
+    <!-- <rux-monitoring-progress-icon slot="right-side" label="Process" [progress]="status" status="off">
       <rux-status part="status-icon" status="off"></rux-status>
-    </rux-monitoring-progress-icon>
+    </rux-monitoring-progress-icon> -->
     <rux-clock slot="right-side"></rux-clock>
 
     <div class="vl" slot="right-side"></div>
-
+    <rux-monitoring-icon icon="netcom" label="Sync" status="normal" notifications="1" slot="right-side" size="1.5rem"></rux-monitoring-icon>
     <div class="tag-stack" slot="right-side">
       <rux-tag [status]="siteA ? 'normal' : 'critical'" [ngStyle]="{ color: siteA ? 'limegreen' : 'red' }">A: {{ siteA ? 'Online' : 'Offline' }}</rux-tag>
       <rux-tag [status]="siteB ? 'normal' : 'critical'" [ngStyle]="{ color: siteB ? 'limegreen' : 'red' }">B: {{ siteB ? 'Online' : 'Offline' }}</rux-tag>
     </div>
   </rux-global-status-bar>
+</div>
+
+<div class="navbar">
+  <a (click)="navigateTo('')">Home</a>
+  <a (click)="navigateTo('/service/')">Service</a>
+  <div class="dropdown">
+    <button class="dropbtn">Record 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a (click)="navigateTo('/monitor')">Monitor</a>
+      <a (click)="navigateTo('/status')">Status</a>
+    </div>
+  </div> 
 </div>
 
 <router-outlet></router-outlet>
@@ -58,4 +87,6 @@
     deny-text=""
   ></rux-dialog>
 </div>
+
+
 
