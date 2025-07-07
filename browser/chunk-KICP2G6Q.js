@@ -1,0 +1,1 @@
+import{a,b as n}from"./chunk-PDR7J233.js";function i(r,t){a(2,arguments);var e=n(r),f=n(t);return e.getTime()-f.getTime()}var o=36e5;function d(r,t){a(2,arguments);var e=i(r,t)/o;return e>0?Math.floor(e):Math.ceil(e)}var s=6e4;function I(r,t){a(2,arguments);var e=i(r,t)/s;return e>0?Math.floor(e):Math.ceil(e)}export{i as a,d as b,I as c};
