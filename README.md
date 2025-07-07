@@ -27,3 +27,26 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+git hub
+`cd your-angular-app`
+`git init`
+`git remote add origin https://github.com/yourusername/your-repo.git`
+`git add .`
+`git commit -m "Initial commit"`
+`git push -u origin master`
+
+Deploy Your Angular App to GitHub Pages
+`npm install -g angular-cli-ghpages`
+
+Build Your App for Production
+`ng build --configuration production --base-href "https://yourusername.github.io/your-repo/"`
+
+It will output static files in the dist/your-app-name/ directory.
+
+Deploy to GitHub Pages
+`npx angular-cli-ghpages --dir=dist/your-app-name`
+
+View Your App
+`https://yourusername.github.io/your-repo/`
