@@ -1,0 +1,116 @@
+.split {
+  display: flex;
+  height: 100vh;
+  padding: 10px;
+}
+
+.split rux-container:first-child {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.split rux-container:last-child {
+  flex: 2;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contacts-header,
+.row {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid;
+}
+
+.contacts-header {
+  font-weight: bold;
+}
+
+.contacts-list .row:hover {
+  background: #254ce9;
+}
+
+.col.name {
+  flex: 2;
+}
+.col.station {
+  flex: 1;
+}
+.col.equipment {
+  flex: 1;
+}
+.col.time {
+  flex: 1.5;
+}
+.col.action {
+  flex: 0.5;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.side-panel {
+  position: fixed;
+  top: 48px; /* adjust for status bar if present */
+  right: -400px;
+  width: 400px;
+  height: calc(100vh - 48px);
+  background-color: #0b0c0e;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  padding: 1rem;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.side-panel.open {
+  right: 0;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.user-table .header,
+.user-table .row {
+  display: flex;
+  justify-content: space-between;
+  grid-template-columns: 2fr 2fr 1fr 2fr;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header {
+  font-weight: 700;
+  /* background-color: #f2f2f2; */
+}
+
+.row {
+  font-weight: 700;
+  /* border-bottom: 1px solid #ccc; */
+}
+
+.container {
+  padding: 1rem 10%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+rux-tree {
+  width: 18rem;
+  margin: 1rem;
+}
+
+rux-button {
+    padding: 0.3rem;
+}

@@ -1,1 +1,246 @@
-<p>status works!</p>
+<div class="split">
+  <rux-container>
+    <div class="header">
+        <h2>Group</h2>
+        <rux-select
+          label="Status"
+          size="small"
+          [value]="selectedStatus"
+          (ruxchange)="applyFilter()"
+        >
+          <rux-option
+            *ngFor="let s of statusFilters"
+            [value]="s"
+            [label]="s | titlecase"
+          ></rux-option>
+        </rux-select>
+      </div>
+    <div class="container">
+    
+      <rux-tree>
+        <rux-tree-node>
+          <rux-status slot="prefix" status="normal"></rux-status>
+          Group Colorado
+
+          <rux-tree-node slot="node">
+            <rux-status slot="prefix" status="normal"></rux-status>
+            Denver
+          </rux-tree-node>
+
+          <rux-tree-node slot="node">
+            <rux-status slot="prefix" status="normal"></rux-status>
+            Colorado Spring
+          </rux-tree-node>
+
+          <rux-tree-node slot="node">
+            <rux-status slot="prefix" status="normal"></rux-status>
+            Boulder
+          </rux-tree-node>
+        </rux-tree-node>
+
+        <rux-tree-node>
+          <rux-status slot="prefix" status="standby"></rux-status>
+          Group Site B
+        </rux-tree-node>
+
+        <rux-tree-node>
+          <rux-status slot="prefix" status="normal"></rux-status>
+          Group Arizona
+
+          <rux-tree-node slot="node">
+            <rux-status slot="prefix" status="off"></rux-status>
+            Tree item 3.1
+          </rux-tree-node>
+
+          <rux-tree-node slot="node">
+            <rux-status slot="prefix" status="critical"></rux-status>
+            Tree item 3.2
+          </rux-tree-node>
+
+          <rux-tree-node slot="node">
+            <rux-status slot="prefix" status="normal"></rux-status>
+            Tree item 3.3
+          </rux-tree-node>
+        </rux-tree-node>
+
+        <rux-tree-node>
+          <rux-status slot="prefix" status="caution"></rux-status>
+          Group California
+
+          <rux-tree-node slot="node">
+            <rux-status slot="prefix" status="caution"></rux-status>
+            Tree item 4.1
+          </rux-tree-node>
+
+          <rux-tree-node slot="node">
+            <rux-status slot="prefix" status="normal"></rux-status>
+            Tree item 4.2
+          </rux-tree-node>
+        </rux-tree-node>
+      </rux-tree>
+    </div>
+  </rux-container>
+
+  <rux-container>
+    <!-- User Contact information  -->
+    <rux-container>
+      <div class="header">
+        <h2>Group</h2>
+        <rux-select
+          label="Status"
+          size="small"
+          [value]="selectedStatus"
+          (ruxchange)="applyFilter()"
+        >
+          <rux-option
+            *ngFor="let s of statusFilters"
+            [value]="s"
+            [label]="s | titlecase"
+          ></rux-option>
+        </rux-select>
+      </div>
+
+      <div class="contacts-header">
+        <span class="col name">Name</span>
+        <span class="col station">Station</span>
+        <span class="col station">NPC</span>
+        <span class="col equipment">Equipment</span>
+        <span class="col time">Start / End</span>
+        <span class="col action"></span>
+      </div>
+
+      <div class="contacts-list">
+        <div *ngFor="let c of filteredContacts" class="row">
+          <span class="col name">{{ c.name }}</span>
+          <span class="col station">{{ c.station }}</span>
+          <span class="col station">{{ c.npc }}</span>
+          <span class="col equipment">{{ c.equipment }}</span>
+          <span class="col time">{{ c.start }} - {{ c.end }}</span>
+          <span class="col action">
+            <rux-button icon="launch" borderless (click)="openDetails(c)"
+              >Details</rux-button
+            >
+          </span>
+        </div>
+      </div>
+    </rux-container>
+
+    <!-- User information add and Delete -->
+    <rux-container>
+        <div class="header">
+        <h2>User Group</h2>
+        <rux-select
+          label="Status"
+          size="small"
+          [value]="selectedStatus"
+          (ruxchange)="applyFilter()"
+        >
+          <rux-option
+            *ngFor="let s of statusFilters"
+            [value]="s"
+            [label]="s | titlecase"
+          ></rux-option>
+        </rux-select>
+      </div>
+        <rux-button icon="add" (click)="openUserForm()">Add User</rux-button>
+
+      <div class="user-table">
+        <div class="header">
+          <span>Name</span>
+          <span>Email</span>
+          <span>Role</span>
+          <span>Group</span>
+          <span>Actions</span>
+        </div>
+        <div *ngFor="let user of users" class="row">
+          <span>{{ user.name }}</span>
+          <span>{{ user.email }}</span>
+          <span>{{ user.role }}</span>
+          <span>{{ user.group }}</span>
+          <span>
+            <rux-button size="small" icon="edit" (click)="editUser(user)"
+              >Edit</rux-button
+            >
+            <rux-button size="small" icon="delete" (click)="deleteUser(user)"
+              >Delete</rux-button
+            >
+          </span>
+        </div>
+      </div>
+    </rux-container>
+  </rux-container>
+</div>
+
+<!-- SLIDE PANEL / EDITOR for contact -->
+<div class="side-panel" [class.open]="selectedContact">
+  <rux-container>
+    <div slot="header">
+      <rux-icon icon="edit"></rux-icon>
+      Edit Group
+    </div>
+
+    <div *ngIf="selectedContact">
+      <rux-input label="Name" [(ngModel)]="selectedContact.name"></rux-input>
+      <rux-input
+        label="Station"
+        [(ngModel)]="selectedContact.station"
+      ></rux-input>
+      <rux-input
+        label="Equipment"
+        [(ngModel)]="selectedContact.equipment"
+      ></rux-input>
+      <rux-input
+        label="Start Time"
+        [(ngModel)]="selectedContact.start"
+      ></rux-input>
+      <rux-input label="End Time" [(ngModel)]="selectedContact.end"></rux-input>
+      <rux-select label="Status" [(ngModel)]="selectedContact.status">
+        <rux-option value="upcoming" label="Upcoming"></rux-option>
+        <rux-option value="executing" label="Executing"></rux-option>
+        <rux-option value="failed" label="Failed"></rux-option>
+      </rux-select>
+      <div class="actions">
+        <rux-button icon="check" (click)="saveContact()">Save</rux-button>
+        <rux-button icon="close" secondary (click)="closeDetails()"
+          >Cancel</rux-button
+        >
+      </div>
+    </div>
+  </rux-container>
+</div>
+
+<!-- Side Drawer or Modal for Details user information-->
+<div class="side-panel" [class.open]="isFormOpen">
+  <rux-modal [open]="isFormOpen" modal-type="dialog" (closed)="closeForm()">
+    <div slot="header">{{ editingUser ? "Edit User" : "Add User" }}</div>
+    <form (ngSubmit)="saveUser()">
+      <rux-input
+        label="Name"
+        [(ngModel)]="formUser.name"
+        name="name"
+      ></rux-input>
+      <rux-input
+        label="Email"
+        [(ngModel)]="formUser.email"
+        name="email"
+      ></rux-input>
+      <rux-input
+        label="Group"
+        [(ngModel)]="formUser.group"
+        name="group"
+      ></rux-input>
+      <rux-select label="Role" [(ngModel)]="formUser.role" name="role">
+        <rux-option value="admin" label="Admin"></rux-option>
+        <rux-option value="editor" label="Editor"></rux-option>
+        <rux-option value="viewer" label="Viewer"></rux-option>
+      </rux-select>
+      <!-- <rux-button type="submit">Save</rux-button> -->
+      <div class="actions">
+        <rux-button icon="check" (click)="saveUser()">Save</rux-button>
+        <rux-button icon="close" secondary (click)="closeForm()"
+          >Cancel</rux-button
+        >
+      </div>
+    </form>
+  </rux-modal>
+</div>
